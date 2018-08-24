@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { DhsAccordionModule } from './components/dhs-accordion';
+import { DhsAccordionModule } from './components/accordion';
 
 @NgModule({
   exports: [DhsAccordionModule]

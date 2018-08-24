@@ -18,10 +18,12 @@
     ],
     "paths": {
       "dhs-kit": [
-        "dist/dhs-kit"
+        "dist/dhs-kit",
+        "projects/dhs-kit/src/public_api.ts"
       ],
       "dhs-kit/*": [
-        "dist/dhs-kit/*"
+        "dist/dhs-kit/*",
+        "projects/dhs-kit/src/*"
       ]
     }
   }
