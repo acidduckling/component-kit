@@ -17,11 +17,11 @@
       "dom"
     ],
     "paths": {
-      "ui-kit": [
-        "dist/ui-kit"
+      "dhs-kit": [
+        "dist/dhs-kit"
       ],
-      "ui-kit/*": [
-        "dist/ui-kit/*"
+      "dhs-kit/*": [
+        "dist/dhs-kit/*"
       ]
     }
   }

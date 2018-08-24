@@ -1,7 +1,5 @@
 /*
- * Public API Surface of ui-kit
+ * Public API Surface of dhs-kit
  */
 
-export * from './lib/ui-kit.service';
-export * from './lib/ui-kit.component';
-export * from './lib/ui-kit.module';
+export * from './lib/dhs-kit.module';
