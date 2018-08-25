@@ -1,11 +1,10 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// Core module
+// _core module
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-@import '_variables.scss';
-@import '_functions.scss';
-@import '_mixins.scss';
+@import '_variables';
+@import '_functions';
+@import '_mixins';
 
-@import '_body';
-@import '_grid';
-@import '_responsive';
+// Consumers can copy this file and override it in their Angular.json config file for custom theming
+@import 'dhs-kit.theming';
