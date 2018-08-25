@@ -1,0 +1,58 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// responsive-media module
+// Caters for video/slideshow dimensions and aspect ratios across various viewports/widths
+//
+// Content:
+// - Responsive video embeds
+// - Responsive image
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Responsive video embeds
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.dhs-responsive-media-vid {
+	position: relative;
+	display: block;
+	height: 0;
+	padding: 0;
+	overflow: hidden;
+
+	> .dhs-responsive-media-vid__item {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		border: 0;
+	}
+
+	&.dhs-responsive-media-vid--16x9 {
+		padding-bottom: percentage( 9 / 16 ); // 16:9
+	}
+
+	&.dhs-responsive-media-vid--4x3 {
+		padding-bottom: percentage( 3 / 4 ); // 4:3
+	}
+
+	* + & {
+		@include dhs-space( margin-top, 1unit );
+	}
+}
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Responsive image
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.dhs-responsive-media-img,
+.dhs-body img,
+.dhs-responsive-media img {
+	max-width: 100%;
+	height: auto;
+}
+
+* + .dhs-responsive-media-img,
+.dhs-body * + img,
+.dhs-responsive-media * + img {
+	@include dhs-space( margin-top, 1unit );
+}

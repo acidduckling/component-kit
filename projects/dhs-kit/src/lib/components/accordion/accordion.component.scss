@@ -1,0 +1,173 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// accordion module
+// Allow the user to toggle the visibility of an element
+//
+// Content:
+// - sass-versioning
+// - globals
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '../../styles/core';
+@import './accordion.component.print';
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// accordion wrapper
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.dhs-accordion {
+	@include dhs-fontgrid( sm );
+	display: block;
+	border: 1px solid $dhs-color-foreground-border;
+	font-family: $dhs-font;
+	color: $dhs-color-foreground-text;
+	padding: 0;
+
+	// Add spacing if there is an element before it
+	* + & {
+		@include dhs-space( margin-top, 1unit );
+	}
+
+	.dhs-accordion__title {
+		background-color: $dhs-color-background-shade;
+	}
+
+	&.dhs-accordion--dark {
+		border-color: $dhs-colordark-foreground-border;
+		color: $dhs-colordark-foreground-text;
+
+		.dhs-accordion__title {
+			background-color: $dhs-colordark-background-shade;
+		}
+	}
+}
+
+.dhs-accordion + .dhs-accordion {
+	margin-top: 0;
+	border-top: 0;
+}
+
+.dhs-body .dhs-accordion__title,
+.dhs-accordion__title {
+	@include dhs-fontgrid( md, heading );
+	@include dhs-space( padding, 1unit 2.5unit 1unit 1unit );
+	display: block;
+	color: $dhs-color-foreground-action;
+	text-decoration: underline;
+	text-decoration-skip: ink;
+	width: 100%;
+	box-sizing: border-box;
+	font-weight: bold;
+	position: relative;
+	cursor: pointer;
+
+	&:hover {
+		text-decoration: none;
+		color: $dhs-color-foreground-text;
+
+		&:after {
+			background-image: dhs-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
+				'<path fill="#{ $dhs-color-foreground-text }" d="M64 0l64 64-16 16-64-64"/>' +
+				'<path fill="#{ $dhs-color-foreground-text }" d="M64 0l16 16-64 64L0 64"/>' +
+			'</svg>');
+		}
+	}
+
+	@include dhs-focus();
+
+	&:focus {
+		z-index: 100;
+	}
+
+	// remove the default details arrow icon
+	&::-webkit-details-marker {
+		display: none;
+	}
+
+	&:after {
+		content: ' ';
+		position: absolute;
+		top: 50%;
+		@include dhs-space( margin-top, -0.5unit ); // Pull it up half of it's height
+		@include dhs-space( right, 1unit );
+		@include dhs-space( width, 1unit );
+		@include dhs-space( height, 1unit );
+		background-image: dhs-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
+				'<path fill="#{ $dhs-color-foreground-action }" d="M64 0l64 64-16 16-64-64"/>' +
+				'<path fill="#{ $dhs-color-foreground-action }" d="M64 0l16 16-64 64L0 64"/>' +
+			'</svg>');
+		background-repeat: no-repeat;
+		background-position: center;
+		z-index: 101;
+		transition: transform 0.25s ease-in;
+	}
+
+	&.dhs-accordion--closed:after {
+		transform: rotate(-180deg);
+	}
+
+	.ie8 &,
+	.lt-ie8 & {
+		&:after {
+			content: ' ▼ ';
+		}
+
+		&.dhs-accordion--open:after {
+			content: ' ▲ ';
+		}
+	}
+}
+
+// Dark title styles
+.dhs-body.dhs-body--dark .dhs-accordion__title,
+.dhs-accordion.dhs-accordion--dark .dhs-accordion__title {
+	color: $dhs-colordark-foreground-action;
+
+
+	&:hover {
+		color: $dhs-colordark-foreground-text;
+
+		&:after {
+			background-image: dhs-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
+				'	<path fill="#{ $dhs-colordark-foreground-text }" d="M64 0l64 64-16 16-64-64"/>' +
+				'	<path fill="#{ $dhs-colordark-foreground-text }" d="M64 0l16 16-64 64L0 64"/>' +
+				'</svg>');
+		}
+	}
+
+	@include dhs-focus( 'dark' );
+
+	&:after {
+		background-image: dhs-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
+			'	<path fill="#{ $dhs-colordark-foreground-action }" d="M64 0l64 64-16 16-64-64"/>' +
+			'	<path fill="#{ $dhs-colordark-foreground-action }" d="M64 0l16 16-64 64L0 64"/>' +
+			'</svg>');
+	}
+}
+
+.dhs-accordion__body {
+	@include dhs-fontgrid( sm );
+	overflow: hidden;
+
+	// only listen to the state classes if js is enabled
+	.js & {
+		&.dhs-accordion--open {
+			display: block;
+			height: auto;
+		}
+
+		&.dhs-accordion--closed {
+			display: none;
+			height: 0;
+		}
+	}
+}
+
+.dhs-accordion__body-wrapper {
+	@include dhs-space( padding, 1unit );
+	border-top: 1px solid $dhs-color-foreground-border;
+
+	.dhs-accordion--dark & {
+		border-top: 1px solid $dhs-colordark-foreground-border;
+	}
+}
