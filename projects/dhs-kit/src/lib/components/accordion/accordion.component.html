@@ -1,11 +1,12 @@
 <section class="dhs-accordion">
-  <a href="#accordion-default" class="dhs-accordion__title js-dhs-accordion" aria-controls="accordion-default" aria-expanded="true" aria-selected="true" role="tab" onclick="return AU.accordion.Toggle( this )">
+  <a href="#accordion-default" class="dhs-accordion__title {{expandedClass}}"
+    aria-controls="accordion-default" [attr.aria-expanded]="expanded" [attr.aria-selected]="expanded" role="tab" (click)="toggle()">
     {{title}}
   </a>
 
-  <div class="dhs-accordion__body" id="accordion-default">
+  <div class="dhs-accordion__body {{expandedClass}}" [id]="_controlId">
     <div class="dhs-accordion__body-wrapper">
-      Here <a href="#url">is</a> some accordion content
+      <ng-content></ng-content>
     </div>
   </div>
 </section>

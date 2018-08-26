@@ -3,3 +3,4 @@
  */
 
 export * from './lib/dhs-kit.module';
+export * from './lib/components/accordion';

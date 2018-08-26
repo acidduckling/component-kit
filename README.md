@@ -1,27 +1,36 @@
-# DesignSystem
+# DHS DesignSystem
+
+This is some experimentation converting the Govau UI Kit to Angular.
+The original kit (built for React) is available here: https://github.com/govau/uikit/
+
+**NOTE**
+
+*This is not the official conversion, but just some early experimentation of my own for what may be used in the official kit.*
+
+## Standard Angular CLI Notes
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
-## Development server
+### Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+### Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+### Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+### Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+### Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+### Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
