@@ -37,19 +37,24 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
+              "extractCss": false,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true
+            },
+            "serve": {
+              "extractCss": true,
+              "sourceMap": true
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "design-system:build"
+            "open": true,
+            "browserTarget": "design-system:build:serve"
           },
           "configurations": {
             "production": {
@@ -130,6 +135,10 @@
           "configurations": {
             "production": {
               "project": "projects/dhs-kit/ng-package.prod.json"
+            },
+            "serve": {
+              "extractCss": true,
+              "sourceMap": true
             }
           }
         },

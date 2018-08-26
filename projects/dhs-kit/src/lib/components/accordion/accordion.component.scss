@@ -102,8 +102,8 @@
     transform: rotate(-180deg);
   }
 
-  :host-context(.ie8 &,
-  .lt-ie8) & {
+  .ie8 &,
+  .lt-ie8 & {
     &:after {
       content: ' ▼ ';
     }
@@ -147,7 +147,7 @@
   overflow: hidden;
 
   // only listen to the state classes if js is enabled
-  :host-context(.js) & {
+  .js & {
     &.dhs-accordion--open {
       display: block;
       height: auto;
