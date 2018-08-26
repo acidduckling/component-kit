@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 let uniqueId = 0;
 
@@ -6,6 +6,7 @@ let uniqueId = 0;
   selector: 'dhs-accordion',
   templateUrl: './accordion.component.html',
   styleUrls: ['./accordion.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class DhsAccordionComponent {
   @Input()
