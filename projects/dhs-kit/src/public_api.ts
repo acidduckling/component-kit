@@ -4,3 +4,4 @@
 
 export * from './lib/dhs-kit.module';
 export * from './lib/components/accordion';
+export * from './lib/components/header';

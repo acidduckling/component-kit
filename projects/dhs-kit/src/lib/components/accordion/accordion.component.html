@@ -1,4 +1,4 @@
-<section class="dhs-accordion">
+<section class="dhs-accordion" [class]="getClasses()">
   <a href="#accordion-default" class="dhs-accordion__title {{expandedClass}}"
     aria-controls="accordion-default" [attr.aria-expanded]="expanded" [attr.aria-selected]="expanded" role="tab" (click)="toggle()">
     {{title}}

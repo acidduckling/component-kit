@@ -1,0 +1,172 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// header module
+// Headers provide a consistent start to pages.
+//
+// Content:
+// - Header styles
+// - Header heading styles
+// - Brand styling
+// - Hero styling
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+@import '../../styles/_core';
+@import '_print.scss';
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// GLOBAL VARIABLES
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+$dhs-logo-width: 12unit !default;
+$dhs-logo-width-sm: 16unit !default;
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Header styles
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+/**
+ * Basic header block styling.
+ */
+.dhs-header {
+  @include dhs-fontgrid(sm);
+  @include dhs-space(padding, 1.5unit 0);
+  font-family: $dhs-font;
+  color: $dhs-color-foreground-text;
+  background: $dhs-color-background;
+
+  @include dhs-media(sm) {
+    @include dhs-fontgrid(md);
+  }
+
+  @include dhs-media(sm) {
+    @include dhs-space(padding, 3unit 0);
+  }
+
+  &.dhs-header--alt {
+    background-color: $dhs-color-background-shade;
+  }
+
+  &.dhs-header--dark {
+    color: $dhs-colordark-foreground-text;
+    background-color: $dhs-colordark-background;
+  }
+
+  &.dhs-header--alt.dhs-header--dark {
+    color: $dhs-colordark-foreground-text;
+    background-color: $dhs-colordark-background-alt;
+  }
+}
+
+/**
+ * Header heading styles
+ */
+.dhs-header__heading {
+  @include dhs-fontgrid(md);
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+
+  @include dhs-media(sm) {
+    @include dhs-fontgrid(xl);
+  }
+}
+
+.dhs-header__subline {
+  max-width: $dhs-maxwidth;
+  color: $dhs-color-foreground-muted;
+
+  .dhs-header--dark & {
+    color: $dhs-colordark-foreground-muted;
+  }
+}
+
+/**
+ * Header brand styles
+ */
+.dhs-header__brand {
+  @include dhs-clearfix();
+  @include dhs-space(min-width, $dhs-logo-width);
+
+  .dhs-header__brand-image {
+    display: block;
+    border-style: none;
+    @include dhs-space(max-width, $dhs-logo-width);
+  }
+
+  .dhs-header__brand-image + .dhs-header__text {
+    @include dhs-space(margin-top, 1unit);
+  }
+
+  @include dhs-media(sm) {
+    @include dhs-space(min-width, $dhs-logo-width-sm);
+
+    .dhs-header__brand-image {
+      float: left;
+      @include dhs-space(max-width, $dhs-logo-width-sm);
+      @include dhs-space(margin-right, -1 * $dhs-logo-width-sm);
+    }
+
+    .dhs-header__brand-image + .dhs-header__text {
+      @include dhs-space(padding-left, 1unit);
+      @include dhs-space(margin-left, $dhs-logo-width-sm + 1unit);
+      margin-top: 0;
+      float: left;
+      border-left: 1px solid $dhs-color-foreground-border;
+
+      .dhs-header--dark & {
+        border-left-color: $dhs-colordark-foreground-border;
+      }
+    }
+  }
+}
+
+a.dhs-header__brand {
+  @include dhs-focus();
+  display: inline-block;
+  color: $dhs-color-foreground-text;
+  text-decoration: none;
+
+  &:hover .dhs-header__text {
+    text-decoration: underline;
+    text-decoration-skip: ink;
+  }
+
+  .dhs-header--dark & {
+    @include dhs-focus('dark');
+    color: $dhs-colordark-foreground-text;
+  }
+}
+
+/**
+ * Header hero styles and resets
+ */
+.dhs-header.dhs-header--hero {
+  @include dhs-space(padding, 3unit 0 3.5unit 0);
+
+  // Reset the floated logo
+  .dhs-header__brand .dhs-header__brand-image {
+    float: none;
+  }
+
+  // Reset the floated title
+  .dhs-header__brand-image + .dhs-header__text {
+    @include dhs-space(margin-top, 2unit);
+    border: 0;
+    margin: 0;
+    padding: 0;
+
+    .dhs-header__heading {
+      @include dhs-space(margin-top, 2unit);
+    }
+  }
+
+  .dhs-header__heading {
+    @include dhs-fontgrid(md);
+
+    @include dhs-media(sm) {
+      @include dhs-fontgrid(xxl);
+    }
+  }
+
+  .dhs-header__heading + .dhs-header__subline {
+    @include dhs-space(margin-top, 0.75unit);
+  }
+}

@@ -1,0 +1,28 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// header module
+// Headers provide a consistent start to pages.
+//
+// Content:
+// - print styles
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@media print {
+	.dhs-header {
+		background: #fff !important;
+
+		a img {
+			border: 0 !important;
+		}
+	}
+
+	.dhs-header,
+	.dhs-header__brand,
+	.dhs-header__subline {
+		color: #000 !important;
+	}
+
+	.dhs-header__brand-image {
+		display: none !important;
+	}
+}

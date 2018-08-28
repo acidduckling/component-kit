@@ -7,7 +7,7 @@ export interface IDhsKitOptions {
   theme: DhsTheme;
 }
 
-@NgModule({})
+@NgModule()
 export class DhsKitModule {
   constructor(@Inject(DOCUMENT) private document: Document) {}
 
