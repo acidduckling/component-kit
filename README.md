@@ -1,4 +1,4 @@
-# DesignSystem
+# Component Kit
 
 This is some experimentation converting the Govau UI Kit to Angular.
 The original kit (built for React) is available here: https://github.com/govau/uikit/
