@@ -1,7 +1,7 @@
 /*
- * Public API Surface of kit-kit
+ * Public API Surface of kit
  */
 
-export * from './lib/kit-kit.module';
+export * from './lib/kit.module';
 export * from './lib/components/accordion';
 export * from './lib/components/header';

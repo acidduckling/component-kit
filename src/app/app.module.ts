@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { KitKitModule, KitAccordionModule, KitHeaderModule } from 'kit-kit';
+import { KitKitModule, KitAccordionModule, KitHeaderModule } from 'kit';
 import { AppComponent } from './app.component';
 
 @NgModule({
