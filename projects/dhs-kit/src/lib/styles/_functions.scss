@@ -2,7 +2,7 @@
 // GLOBAL FUNCTIONS
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 /**
- * dhs-replace - Replace a string with a string
+ * kit-replace - Replace a string with a string
  * http://codepen.io/jakob-e/pen/doMoML
  *
  * @author @eriksen_dk <https://twitter.com/eriksen_dk>
@@ -13,17 +13,17 @@
  *
  * @return {string}          - The manipulated string with replaced values
  */
-@function dhs-replace( $string, $search, $replace: '' ) {
+@function kit-replace( $string, $search, $replace: '' ) {
 	@if type-of( $string ) != 'string' {
-		@error "I have a bad feeling about this; the dhs-replace first argument must be a string!";
+		@error "I have a bad feeling about this; the kit-replace first argument must be a string!";
 	}
 
 	@if type-of( $search ) != 'string' {
-		@error "We’ll always have Paris; the dhs-replace second argument must be a string!";
+		@error "We’ll always have Paris; the kit-replace second argument must be a string!";
 	}
 
 	@if type-of( $replace ) != 'string' {
-		@error "Hasta la vista, baby; the dhs-replace third argument must be a string!";
+		@error "Hasta la vista, baby; the kit-replace third argument must be a string!";
 	}
 
 	$index: str-index( $string, $search );
@@ -31,7 +31,7 @@
 	@return if( $index,
 		str-slice( $string, 1, $index - 1 ) +
 		$replace +
-		dhs-replace(
+		kit-replace(
 			str-slice( $string, $index + str-length( $search )
 		), $search, $replace ),
 		$string
@@ -40,7 +40,7 @@
 
 
 /**
- * dhs-svguri - Generate an optimized SVG data-uri
+ * kit-svguri - Generate an optimized SVG data-uri
  * https://codepen.io/tigt/post/optimizing-svgs-in-data-uris
  * http://codepen.io/jakob-e/pen/doMoML
  *
@@ -50,13 +50,13 @@
  *
  * @return {string}      - An optimized data-uri
  */
-@function dhs-svguri( $svg ) {
+@function kit-svguri( $svg ) {
 	@if type-of( $svg ) != 'string' {
-		@error "With great power comes great responsibility; the dhs-svguri function only takes a string!";
+		@error "With great power comes great responsibility; the kit-svguri function only takes a string!";
 	}
 
 	@if not str-index( $svg, xmlns ) { // Add missing namespace
-		$svg: dhs-replace( $svg, '<svg','<svg xmlns="http://www.w3.org/2000/svg"' );
+		$svg: kit-replace( $svg, '<svg','<svg xmlns="http://www.w3.org/2000/svg"' );
 	}
 
 	$encoded:'';
@@ -67,33 +67,33 @@
 	@for $i from 1 through $loops {
 		$chunk: str-slice( $svg, $index, $index + $slice - 1 );
 
-		$chunk: dhs-replace( $chunk,'"', "'" );
-		$chunk: dhs-replace( $chunk,'	', " " );
-		$chunk: dhs-replace( $chunk,"\a", " " );
-		$chunk: dhs-replace( $chunk,'  ', " " );
-		$chunk: dhs-replace( $chunk,'%', '%25' );
-		$chunk: dhs-replace( $chunk,'&', '%26' );
-		$chunk: dhs-replace( $chunk,'#', '%23' );
-		$chunk: dhs-replace( $chunk,'{', '%7B' );
-		$chunk: dhs-replace( $chunk,'}', '%7D' );
-		$chunk: dhs-replace( $chunk,'<', '%3C' );
-		$chunk: dhs-replace( $chunk,'>', '%3E' );
+		$chunk: kit-replace( $chunk,'"', "'" );
+		$chunk: kit-replace( $chunk,'	', " " );
+		$chunk: kit-replace( $chunk,"\a", " " );
+		$chunk: kit-replace( $chunk,'  ', " " );
+		$chunk: kit-replace( $chunk,'%', '%25' );
+		$chunk: kit-replace( $chunk,'&', '%26' );
+		$chunk: kit-replace( $chunk,'#', '%23' );
+		$chunk: kit-replace( $chunk,'{', '%7B' );
+		$chunk: kit-replace( $chunk,'}', '%7D' );
+		$chunk: kit-replace( $chunk,'<', '%3C' );
+		$chunk: kit-replace( $chunk,'>', '%3E' );
 
 		/*    The maybe list
 
 			 Keep size and compile time down
 			 ... only add on documented fail
 
-		 $chunk: dhs-replace( $chunk, '|', '%7C' );
-		 $chunk: dhs-replace( $chunk, '[', '%5B' );
-		 $chunk: dhs-replace( $chunk, ']', '%5D' );
-		 $chunk: dhs-replace( $chunk, '^', '%5E' );
-		 $chunk: dhs-replace( $chunk, '`', '%60' );
-		 $chunk: dhs-replace( $chunk, ';', '%3B' );
-		 $chunk: dhs-replace( $chunk, '?', '%3F' );
-		 $chunk: dhs-replace( $chunk, ':', '%3A' );
-		 $chunk: dhs-replace( $chunk, '@', '%40' );
-		 $chunk: dhs-replace( $chunk, '=', '%3D' );
+		 $chunk: kit-replace( $chunk, '|', '%7C' );
+		 $chunk: kit-replace( $chunk, '[', '%5B' );
+		 $chunk: kit-replace( $chunk, ']', '%5D' );
+		 $chunk: kit-replace( $chunk, '^', '%5E' );
+		 $chunk: kit-replace( $chunk, '`', '%60' );
+		 $chunk: kit-replace( $chunk, ';', '%3B' );
+		 $chunk: kit-replace( $chunk, '?', '%3F' );
+		 $chunk: kit-replace( $chunk, ':', '%3A' );
+		 $chunk: kit-replace( $chunk, '@', '%40' );
+		 $chunk: kit-replace( $chunk, '=', '%3D' );
 		*/
 
 		$encoded: #{ $encoded }#{ $chunk };
@@ -105,7 +105,7 @@
 
 
 /**
- * dhs-factorial - Returns the factorial of a non-negative integer.
+ * kit-factorial - Returns the factorial of a non-negative integer.
  * https://github.com/terkel/mathsass
  *
  * @author Pascal Duez @pascalduez <http://pascalduez.me/>
@@ -114,9 +114,9 @@
  *
  * @return {integer}         - The factorial log
  */
-@function dhs-factorial( $number ) {
+@function kit-factorial( $number ) {
 	@if $number < 0 or $number != floor( $number ) {
-		@error "You talking to me?; the dhs-factorial function only takes positive numbers.";
+		@error "You talking to me?; the kit-factorial function only takes positive numbers.";
 	}
 
 	$factorial: 1;
@@ -131,7 +131,7 @@
 
 
 /**
- * dhs-pow - Returns base to the exponent power.
+ * kit-pow - Returns base to the exponent power.
  * https://github.com/terkel/mathsass
  *
  * @author Pascal Duez @pascalduez <http://pascalduez.me/>
@@ -141,9 +141,9 @@
  *
  * @return {integers}           - The result of the math
  */
-@function dhs-pow( $base, $exponent ) {
+@function kit-pow( $base, $exponent ) {
 	@if $exponent < 0 {
-		@error "I can see dead people; the dhs-pow function only takes positive numbers as the second argument.";
+		@error "I can see dead people; the kit-pow function only takes positive numbers as the second argument.";
 	}
 
 	// Constants
@@ -232,7 +232,7 @@
 		$return: 0;
 
 		@for $quarter from 0 to 24 {
-			$return: $return + dhs-pow( $logarithm, $quarter ) / dhs-factorial( $quarter );
+			$return: $return + kit-pow( $logarithm, $quarter ) / kit-factorial( $quarter );
 		}
 
 		@return $return;
@@ -241,7 +241,7 @@
 
 
 /**
- * dhs-color-luminance - Calculate color luminance
+ * kit-color-luminance - Calculate color luminance
  *
  * https://github.com/voxpelli/sass-color-helpers/blob/master/stylesheets/color-helpers/_contrast.scss
  * Adapted from: https://github.com/LeaVerou/contrast-ratio/blob/gh-pages/color.js
@@ -253,9 +253,9 @@
  *
  * @return {float}          - The luminance
  */
-@function dhs-color-luminance( $color ) {
+@function kit-color-luminance( $color ) {
 	@if type-of( $color ) != 'color' {
-		@error "Go ahead, make my day; the dhs-color-luminance function only takes a color!";
+		@error "Go ahead, make my day; the kit-color-luminance function only takes a color!";
 	}
 
 	$rgba: red( $color ), green( $color ), blue( $color );
@@ -265,7 +265,7 @@
 		$rgb: nth( $rgba, $i );
 		$rgb: $rgb / 255;
 
-		$rgb: if( $rgb < .03928, $rgb / 12.92, dhs-pow( ( $rgb + .055 ) / 1.055, 2.4 ) );
+		$rgb: if( $rgb < .03928, $rgb / 12.92, kit-pow( ( $rgb + .055 ) / 1.055, 2.4 ) );
 
 		$rgba2: append( $rgba2, $rgb );
 	}
@@ -275,7 +275,7 @@
 
 
 /**
- * dhs-color-contrast - Get the contrast ratio of two colors and warn when it is below WCAG 2.0 AA standard 4.5:1
+ * kit-color-contrast - Get the contrast ratio of two colors and warn when it is below WCAG 2.0 AA standard 4.5:1
  *
  * https://github.com/voxpelli/sass-color-helpers/blob/master/stylesheets/color-helpers/_contrast.scss
  * Adapted from: https://github.com/LeaVerou/contrast-ratio/blob/gh-pages/color.js
@@ -290,17 +290,17 @@
  *
  * @return {integer}              - The contrast ratio
  */
-@function dhs-color-contrast( $foreground, $background, $silent: false, $rounded: true ) {
+@function kit-color-contrast( $foreground, $background, $silent: false, $rounded: true ) {
 	@if type-of( $foreground ) != 'color' {
-		@error "Elementary, my dear Watson; the dhs-color-contrast function only takes a color as first argument!";
+		@error "Elementary, my dear Watson; the kit-color-contrast function only takes a color as first argument!";
 	}
 
 	@if type-of( $background ) != 'color' {
-		@error "You can’t handle the truth; the dhs-color-contrast function only takes a color as second argument!";
+		@error "You can’t handle the truth; the kit-color-contrast function only takes a color as second argument!";
 	}
 
-	$luminance1: dhs-color-luminance( $foreground ) + .05;
-	$luminance2: dhs-color-luminance( $background ) + .05;
+	$luminance1: kit-color-luminance( $foreground ) + .05;
+	$luminance2: kit-color-luminance( $background ) + .05;
 	$ratio: $luminance1 / $luminance2;
 
 	@if $luminance2 > $luminance1 {
@@ -321,7 +321,7 @@
 
 
 /**
- * dhs-color-a11y - The function to find the nearest accessible color
+ * kit-color-a11y - The function to find the nearest accessible color
  *
  * https://github.com/alex-page/sass-a11ycolor
  *
@@ -335,17 +335,17 @@
  *
  * @return {Color}                                 - Returns the nearest accessible color
  */
-@function dhs-color-a11y( $toMakeA11y, $background, $ratioKey: 'small' ) {
+@function kit-color-a11y( $toMakeA11y, $background, $ratioKey: 'small' ) {
 	@if type-of( $toMakeA11y ) != 'color' {
-		@error "Where we’re going, we don’t need roads; the dhs-a11ycolor function only takes a color as the first attribute!";
+		@error "Where we’re going, we don’t need roads; the kit-a11ycolor function only takes a color as the first attribute!";
 	}
 
 	@if type-of( $background ) != 'color' {
-		@error "You shall not pass; the dhs-a11ycolor function only takes a color as the second attribute!";
+		@error "You shall not pass; the kit-a11ycolor function only takes a color as the second attribute!";
 	}
 
 	@if $ratioKey != 'small' and $ratioKey != 'large' {
-		@error "I have always depended on the kindness of strangers; the dhs-a11ycolor function only takes 'small' or 'large' as third attribute.";
+		@error "I have always depended on the kindness of strangers; the kit-a11ycolor function only takes 'small' or 'large' as third attribute.";
 	}
 
 
@@ -356,7 +356,7 @@
 	$ratio: map-get( $ratios, $ratioKey );
 
 	// Check the ratio straight away, if it passes return the value as hex
-	@if dhs-color-contrast( $toMakeA11y, $background, true, false ) >= $ratio {
+	@if kit-color-contrast( $toMakeA11y, $background, true, false ) >= $ratio {
 		@return $toMakeA11y;
 	}
 
@@ -368,7 +368,7 @@
 	$maxLightness: 100;
 
 	// If our colour passes contrast on black
-	@if dhs-color-contrast( hsl(
+	@if kit-color-contrast( hsl(
 		hue( $toMakeA11y ),
 		saturation( $toMakeA11y ),
 		$bgLightness
@@ -376,7 +376,7 @@
 		$minLightness: $a11yLightness;
 		$maxLightness: $bgLightness;
 	}
-	@else if dhs-color-contrast( #000, $background, true, false ) >= $ratio {
+	@else if kit-color-contrast( #000, $background, true, false ) >= $ratio {
 		$maxLightness: if( $a11yLightness > $bgLightness, $bgLightness, $a11yLightness );
 	}
 	// It didn't pass on black
@@ -399,7 +399,7 @@
 
 
 		// If we meet contrast
-		@if dhs-color-contrast( $resetColor, $background, true, false ) >= $ratio {
+		@if kit-color-contrast( $resetColor, $background, true, false ) >= $ratio {
 			// The colour is in the minimal lightness range for one hexadecimal
 			@if	$maxLightness - $minLightness < $minHexDiff {
 				$foundColor: $resetColor;

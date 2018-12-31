@@ -9,44 +9,44 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // accordion wrapper
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.dhs-accordion {
-  @include dhs-fontgrid(sm);
+.kit-accordion {
+  @include kit-fontgrid(sm);
   display: block;
-  border: 1px solid $dhs-color-foreground-border;
-  font-family: $dhs-font;
-  color: $dhs-color-foreground-text;
+  border: 1px solid $kit-color-foreground-border;
+  font-family: $kit-font;
+  color: $kit-color-foreground-text;
   padding: 0;
 
   // Add spacing if there is an element before it
   * + & {
-    @include dhs-space(margin-top, 1unit);
+    @include kit-space(margin-top, 1unit);
   }
 
-  .dhs-accordion__title {
-    background-color: $dhs-color-background-shade;
+  .kit-accordion__title {
+    background-color: $kit-color-background-shade;
   }
 
-  &.dhs-accordion--dark {
-    border-color: $dhs-colordark-foreground-border;
-    color: $dhs-colordark-foreground-text;
+  &.kit-accordion--dark {
+    border-color: $kit-colordark-foreground-border;
+    color: $kit-colordark-foreground-text;
 
-    .dhs-accordion__title {
-      background-color: $dhs-colordark-background-shade;
+    .kit-accordion__title {
+      background-color: $kit-colordark-background-shade;
     }
   }
 }
 
-.dhs-accordion + .dhs-accordion {
+.kit-accordion + .kit-accordion {
   margin-top: 0;
   border-top: 0;
 }
 
-.dhs-body .dhs-accordion__title,
-.dhs-accordion__title {
-  @include dhs-fontgrid(md, heading);
-  @include dhs-space(padding, 1unit 2.5unit 1unit 1unit);
+.kit-body .kit-accordion__title,
+.kit-accordion__title {
+  @include kit-fontgrid(md, heading);
+  @include kit-space(padding, 1unit 2.5unit 1unit 1unit);
   display: block;
-  color: $dhs-color-foreground-action;
+  color: $kit-color-foreground-action;
   text-decoration: underline;
   text-decoration-skip: ink;
   width: 100%;
@@ -57,18 +57,18 @@
 
   &:hover {
     text-decoration: none;
-    color: $dhs-color-foreground-text;
+    color: $kit-color-foreground-text;
 
     &:after {
-      background-image: dhs-svguri(
+      background-image: kit-svguri(
         '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
-          '<path fill="#{ $dhs-color-foreground-text }" d="M64 0l64 64-16 16-64-64"/>' +
-          '<path fill="#{ $dhs-color-foreground-text }" d="M64 0l16 16-64 64L0 64"/>' + '</svg>'
+          '<path fill="#{ $kit-color-foreground-text }" d="M64 0l64 64-16 16-64-64"/>' +
+          '<path fill="#{ $kit-color-foreground-text }" d="M64 0l16 16-64 64L0 64"/>' + '</svg>'
       );
     }
   }
 
-  @include dhs-focus();
+  @include kit-focus();
 
   &:focus {
     z-index: 100;
@@ -83,14 +83,14 @@
     content: ' ';
     position: absolute;
     top: 50%;
-    @include dhs-space(margin-top, -0.5unit); // Pull it up half of it's height
-    @include dhs-space(right, 1unit);
-    @include dhs-space(width, 1unit);
-    @include dhs-space(height, 1unit);
-    background-image: dhs-svguri(
+    @include kit-space(margin-top, -0.5unit); // Pull it up half of it's height
+    @include kit-space(right, 1unit);
+    @include kit-space(width, 1unit);
+    @include kit-space(height, 1unit);
+    background-image: kit-svguri(
       '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
-        '<path fill="#{ $dhs-color-foreground-action }" d="M64 0l64 64-16 16-64-64"/>' +
-        '<path fill="#{ $dhs-color-foreground-action }" d="M64 0l16 16-64 64L0 64"/>' + '</svg>'
+        '<path fill="#{ $kit-color-foreground-action }" d="M64 0l64 64-16 16-64-64"/>' +
+        '<path fill="#{ $kit-color-foreground-action }" d="M64 0l16 16-64 64L0 64"/>' + '</svg>'
     );
     background-repeat: no-repeat;
     background-position: center;
@@ -98,7 +98,7 @@
     transition: transform 0.25s ease-in;
   }
 
-  &.dhs-accordion--closed:after {
+  &.kit-accordion--closed:after {
     transform: rotate(-180deg);
   }
 
@@ -108,63 +108,63 @@
       content: ' ▼ ';
     }
 
-    &.dhs-accordion--open:after {
+    &.kit-accordion--open:after {
       content: ' ▲ ';
     }
   }
 }
 
 // Dark title styles
-.dhs-body.dhs-body--dark .dhs-accordion__title,
-.dhs-accordion.dhs-accordion--dark .dhs-accordion__title {
-  color: $dhs-colordark-foreground-action;
+.kit-body.kit-body--dark .kit-accordion__title,
+.kit-accordion.kit-accordion--dark .kit-accordion__title {
+  color: $kit-colordark-foreground-action;
 
   &:hover {
-    color: $dhs-colordark-foreground-text;
+    color: $kit-colordark-foreground-text;
 
     &:after {
-      background-image: dhs-svguri(
+      background-image: kit-svguri(
         '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
-          '	<path fill="#{ $dhs-colordark-foreground-text }" d="M64 0l64 64-16 16-64-64"/>' +
-          '	<path fill="#{ $dhs-colordark-foreground-text }" d="M64 0l16 16-64 64L0 64"/>' + '</svg>'
+          '	<path fill="#{ $kit-colordark-foreground-text }" d="M64 0l64 64-16 16-64-64"/>' +
+          '	<path fill="#{ $kit-colordark-foreground-text }" d="M64 0l16 16-64 64L0 64"/>' + '</svg>'
       );
     }
   }
 
-  @include dhs-focus('dark');
+  @include kit-focus('dark');
 
   &:after {
-    background-image: dhs-svguri(
+    background-image: kit-svguri(
       '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
-        '	<path fill="#{ $dhs-colordark-foreground-action }" d="M64 0l64 64-16 16-64-64"/>' +
-        '	<path fill="#{ $dhs-colordark-foreground-action }" d="M64 0l16 16-64 64L0 64"/>' + '</svg>'
+        '	<path fill="#{ $kit-colordark-foreground-action }" d="M64 0l64 64-16 16-64-64"/>' +
+        '	<path fill="#{ $kit-colordark-foreground-action }" d="M64 0l16 16-64 64L0 64"/>' + '</svg>'
     );
   }
 }
 
-.dhs-accordion__body {
-  @include dhs-fontgrid(sm);
+.kit-accordion__body {
+  @include kit-fontgrid(sm);
   overflow: hidden;
 
   // only listen to the state classes if js is enabled
   .js & {
-    &.dhs-accordion--open {
+    &.kit-accordion--open {
       display: block;
       height: auto;
     }
 
-    &.dhs-accordion--closed {
+    &.kit-accordion--closed {
       display: none;
       height: 0;
     }
   }
 }
 
-.dhs-accordion__body-wrapper {
-  @include dhs-space(padding, 1unit);
-  border-top: 1px solid $dhs-color-foreground-border;
+.kit-accordion__body-wrapper {
+  @include kit-space(padding, 1unit);
+  border-top: 1px solid $kit-color-foreground-border;
 
-  .dhs-accordion--dark & {
-    border-top: 1px solid $dhs-colordark-foreground-border;
+  .kit-accordion--dark & {
+    border-top: 1px solid $kit-colordark-foreground-border;
   }
 }

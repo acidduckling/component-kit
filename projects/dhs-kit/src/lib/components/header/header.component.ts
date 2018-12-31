@@ -1,12 +1,12 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'dhs-header',
+  selector: 'kit-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class DhsHeaderComponent implements OnInit {
+export class KitHeaderComponent implements OnInit {
 
   constructor() { }
 

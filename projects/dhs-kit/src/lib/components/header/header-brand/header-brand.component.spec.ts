@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DhsHeaderBrandComponent } from './header-brand.component';
+import { KitHeaderBrandComponent } from './header-brand.component';
 
-describe('DhsHeaderBrandComponent', () => {
-  let component: DhsHeaderBrandComponent;
-  let fixture: ComponentFixture<DhsHeaderBrandComponent>;
+describe('KitHeaderBrandComponent', () => {
+  let component: KitHeaderBrandComponent;
+  let fixture: ComponentFixture<KitHeaderBrandComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DhsHeaderBrandComponent ]
+      declarations: [ KitHeaderBrandComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DhsHeaderBrandComponent);
+    fixture = TestBed.createComponent(KitHeaderBrandComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

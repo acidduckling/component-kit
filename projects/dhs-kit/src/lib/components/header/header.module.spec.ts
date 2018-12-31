@@ -1,10 +1,10 @@
-import { DhsHeaderModule } from './header.module';
+import { KitHeaderModule } from './header.module';
 
-describe('DhsHeaderModule', () => {
-  let headerModule: DhsHeaderModule;
+describe('KitHeaderModule', () => {
+  let headerModule: KitHeaderModule;
 
   beforeEach(() => {
-    headerModule = new DhsHeaderModule();
+    headerModule = new KitHeaderModule();
   });
 
   it('should create an instance', () => {

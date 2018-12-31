@@ -2,21 +2,21 @@
 // GLOBAL MIXINS
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 /**
- * dhs-space - Mixin for setting a properties value to snap to the grid, with a fallback for REM.
+ * kit-space - Mixin for setting a properties value to snap to the grid, with a fallback for REM.
  *
  * @param  {string} $property - The css property to apply the spacing ( padding, margin )
  * @param  {number} $values   - The values of the property ( 0, 20px, 1unit, 5% )
  *
  * @return {number}           - The space in px and rems
  */
- @mixin dhs-space( $property, $values, $pixelfallback: $dhs-pixelfallback ) {
-	$unit: $dhs-unit; // The grid unit to use
+ @mixin kit-space( $property, $values, $pixelfallback: $kit-pixelfallback ) {
+	$unit: $kit-unit; // The grid unit to use
 	$output: ();
 	$fallback: ();
 	$has_fallback: false;
 
 	@if type-of( $property ) != 'string' {
-		@error "I’m sorry Dave, I can’t do that; the dhs-space function only takes a string as first argument!";
+		@error "I’m sorry Dave, I can’t do that; the kit-space function only takes a string as first argument!";
 	}
 
 	// Loop through the $values list
@@ -50,9 +50,9 @@
 
 
 /**
- * dhs-clearfix - Clearing floats
+ * kit-clearfix - Clearing floats
  */
-@mixin dhs-clearfix() {
+@mixin kit-clearfix() {
 	&:before,
 	&:after {
 		content: " ";
@@ -66,41 +66,41 @@
 
 
 /**
- * dhs-media - Create media queries and wraps the @content code inside of it
+ * kit-media - Create media queries and wraps the @content code inside of it
  *
  * @param  {keywords} $breakpoint - Either one of the following keywords: xs, sm, md, lg
  *
  * @return {string}               - The code passed in via @content wrapped inside a media query
  */
-@mixin dhs-media( $breakpoint ) {
+@mixin kit-media( $breakpoint ) {
 	@if type-of( $breakpoint ) != 'string' {
-		@error "Captain I’m giving it all she’s got but; the dhs-media mixin only takes a string!";
+		@error "Captain I’m giving it all she’s got but; the kit-media mixin only takes a string!";
 	}
 
 	@if $breakpoint != 'xs' and $breakpoint != 'sm' and $breakpoint != 'md' and $breakpoint != 'lg' {
-		@error "There’s no crying in baseball; the dhs-media mixin only takes the following breakpoint strings: xs, sm, md, lg";
+		@error "There’s no crying in baseball; the kit-media mixin only takes the following breakpoint strings: xs, sm, md, lg";
 	}
 
 	@if( $breakpoint == "xs" ) {
-		@media (min-width: $dhs-media-xs) {
+		@media (min-width: $kit-media-xs) {
 			@content;
 		}
 	}
 
 	@if( $breakpoint == "sm" ) {
-		@media (min-width: $dhs-media-sm) {
+		@media (min-width: $kit-media-sm) {
 			@content;
 		}
 	}
 
 	@if( $breakpoint == "md" ) {
-		@media (min-width: $dhs-media-md) {
+		@media (min-width: $kit-media-md) {
 			@content;
 		}
 	}
 
 	@if( $breakpoint == "lg" ) {
-		@media (min-width: $dhs-media-lg) {
+		@media (min-width: $kit-media-lg) {
 			@content;
 		}
 	}
@@ -108,9 +108,9 @@
 
 
 /**
- * dhs-sronly - Hide an element from the screen but not a screen reader
+ * kit-sronly - Hide an element from the screen but not a screen reader
  */
-@mixin dhs-sronly() {
+@mixin kit-sronly() {
 	position: absolute;
 	width: 1px;
 	height: 1px;
@@ -123,18 +123,18 @@
 
 
 /**
- * dhs-outline - Create outline based on the theme the user is using.
+ * kit-outline - Create outline based on the theme the user is using.
  *
  * @param  {keywords} $theme - `dark` or default ( `light` )
  *
  * @return {string}          - The code
  */
-@mixin dhs-outline( $theme: 'light' ) {
+@mixin kit-outline( $theme: 'light' ) {
 	@if $theme == 'dark' {
-		outline: 3px solid $dhs-colordark-foreground-focus;
+		outline: 3px solid $kit-colordark-foreground-focus;
 	}
 	@else {
-		outline: 3px solid $dhs-color-foreground-focus;
+		outline: 3px solid $kit-color-foreground-focus;
 
 		// Only add the offset if it's the default style
 		outline-offset: 2px;
@@ -143,11 +143,11 @@
 
 
 /**
- * dhs-focus - Add the outline to focus
+ * kit-focus - Add the outline to focus
  */
-@mixin dhs-focus( $theme: 'light' ) {
+@mixin kit-focus( $theme: 'light' ) {
 	&:focus {
-		@include dhs-outline( $theme );
+		@include kit-outline( $theme );
 	}
 
 	// Remove Modzilla inner HTML dotted line. github.com/necolas/normalize.css/blob/master/normalize.css#L285
@@ -158,37 +158,37 @@
 
 
 /**
- * dhs-fontgrid Mixin for setting font-size and line-height that snaps to the grid.
+ * kit-fontgrid Mixin for setting font-size and line-height that snaps to the grid.
  *
  * @param  {keywords} $fontsize-key   -  Either one of the following keywords: xs, sm, md, lg, xl, xxl, xxxl
  * @param  {keywords} $lineheight-key -  Either one of the following keywords: heading, nospace, default
  *
  * @return {string}                   - The code; fontsize in REM, with PX fallback, and unitless line-height which matches vertical grid
 */
-@mixin dhs-fontgrid( $fontsize-key, $lineheight-key: 'default' ) {
+@mixin kit-fontgrid( $fontsize-key, $lineheight-key: 'default' ) {
 
 	@if type-of( $fontsize-key ) != 'string' {
-		@error "Going somewhere, Solo?; the dhs-fontgrid mixin fontsize key takes a string!";
+		@error "Going somewhere, Solo?; the kit-fontgrid mixin fontsize key takes a string!";
 	}
 
 	@if type-of( $lineheight-key ) != 'string' {
-		@error "Tell Jabba I've got his money; the dhs-fontgrid mixin lineheight key takes a string!";
+		@error "Tell Jabba I've got his money; the kit-fontgrid mixin lineheight key takes a string!";
 	}
 
-	@if not map-has-key( $dhs-fontsize-map, $fontsize-key ) {
-		@error "You shall not pass; the dhs-fontgrid mixin only takes the following fontsize keys strings: " + map-keys( $dhs-fontsize-map );
+	@if not map-has-key( $kit-fontsize-map, $fontsize-key ) {
+		@error "You shall not pass; the kit-fontgrid mixin only takes the following fontsize keys strings: " + map-keys( $kit-fontsize-map );
 	}
 
-	@if not map-has-key( $dhs-lineheight-map, $lineheight-key ) {
-		@error "There's a snake in my boot; the dhs-fontgrid mixin only takes the following lineheight keys strings: " + map-keys( $dhs-lineheight-map );
+	@if not map-has-key( $kit-lineheight-map, $lineheight-key ) {
+		@error "There's a snake in my boot; the kit-fontgrid mixin only takes the following lineheight keys strings: " + map-keys( $kit-lineheight-map );
 	}
 
 	// Get the value from supplied key for pixel and calculate the rem value
-	$fontsize-px: map-get( $dhs-fontsize-map, $fontsize-key );
-	$fontsize-rem: $fontsize-px / $dhs-rem;
+	$fontsize-px: map-get( $kit-fontsize-map, $fontsize-key );
+	$fontsize-rem: $fontsize-px / $kit-rem;
 
-	// Change the lineheight if it doesn't hit a dhs-unit e.g. 40px font size with 1.5 lineheight = 50px should be 52px
-	$lineheight-pixel: round( ( map-get( $dhs-lineheight-map, $lineheight-key ) * $fontsize-px ) / $dhs-unit ) * $dhs-unit;
+	// Change the lineheight if it doesn't hit a kit-unit e.g. 40px font size with 1.5 lineheight = 50px should be 52px
+	$lineheight-pixel: round( ( map-get( $kit-lineheight-map, $lineheight-key ) * $fontsize-px ) / $kit-unit ) * $kit-unit;
 	$lineheight: $lineheight-pixel / $fontsize-px;
 
 	// Mixin output

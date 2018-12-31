@@ -6,14 +6,14 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Responsive video embeds
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.dhs-responsive-media-vid {
+.kit-responsive-media-vid {
   position: relative;
   display: block;
   height: 0;
   padding: 0;
   overflow: hidden;
 
-  > .dhs-responsive-media-vid__item {
+  > .kit-responsive-media-vid__item {
     position: absolute;
     top: 0;
     left: 0;
@@ -22,31 +22,31 @@
     border: 0;
   }
 
-  &.dhs-responsive-media-vid--16x9 {
+  &.kit-responsive-media-vid--16x9 {
     padding-bottom: percentage(9 / 16); // 16:9
   }
 
-  &.dhs-responsive-media-vid--4x3 {
+  &.kit-responsive-media-vid--4x3 {
     padding-bottom: percentage(3 / 4); // 4:3
   }
 
   * + & {
-    @include dhs-space(margin-top, 1unit);
+    @include kit-space(margin-top, 1unit);
   }
 }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Responsive image
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.dhs-responsive-media-img,
-.dhs-body img,
-.dhs-responsive-media img {
+.kit-responsive-media-img,
+.kit-body img,
+.kit-responsive-media img {
   max-width: 100%;
   height: auto;
 }
 
-* + .dhs-responsive-media-img,
-.dhs-body * + img,
-.dhs-responsive-media * + img {
-  @include dhs-space(margin-top, 1unit);
+* + .kit-responsive-media-img,
+.kit-body * + img,
+.kit-responsive-media * + img {
+  @include kit-space(margin-top, 1unit);
 }

@@ -1,7 +1,7 @@
 /*
- * Public API Surface of dhs-kit
+ * Public API Surface of kit-kit
  */
 
-export * from './lib/dhs-kit.module';
+export * from './lib/kit-kit.module';
 export * from './lib/components/accordion';
 export * from './lib/components/header';

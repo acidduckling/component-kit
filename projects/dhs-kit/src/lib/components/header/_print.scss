@@ -8,7 +8,7 @@
 
 
 @media print {
-	.dhs-header {
+	.kit-header {
 		background: #fff !important;
 
 		a img {
@@ -16,13 +16,13 @@
 		}
 	}
 
-	.dhs-header,
-	.dhs-header__brand,
-	.dhs-header__subline {
+	.kit-header,
+	.kit-header__brand,
+	.kit-header__subline {
 		color: #000 !important;
 	}
 
-	.dhs-header__brand-image {
+	.kit-header__brand-image {
 		display: none !important;
 	}
 }

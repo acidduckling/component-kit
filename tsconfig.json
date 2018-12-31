@@ -17,13 +17,13 @@
       "dom"
     ],
     "paths": {
-      "dhs-kit": [
-        "dist/dhs-kit",
-        "projects/dhs-kit/src/public_api.ts"
+      "kit-kit": [
+        "dist/kit-kit",
+        "projects/kit-kit/src/public_api.ts"
       ],
-      "dhs-kit/*": [
-        "dist/dhs-kit/*",
-        "projects/dhs-kit/src/*"
+      "kit-kit/*": [
+        "dist/kit-kit/*",
+        "projects/kit-kit/src/*"
       ]
     }
   }

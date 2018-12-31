@@ -8,21 +8,21 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Implementation of the Bootstrap 3 grid
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.dhs-grid {
+.kit-grid {
   //create container that snaps to breakpoints
   .container {
     box-sizing: border-box;
 
-    @include dhs-media(sm) {
-      width: ($dhs-media-sm - $dhs-grid-12-gutter-width);
+    @include kit-media(sm) {
+      width: ($kit-media-sm - $kit-grid-12-gutter-width);
     }
 
-    @include dhs-media(md) {
-      width: ($dhs-media-md - $dhs-grid-12-gutter-width);
+    @include kit-media(md) {
+      width: ($kit-media-md - $kit-grid-12-gutter-width);
     }
 
-    @include dhs-media(lg) {
-      width: ($dhs-media-lg - $dhs-grid-12-gutter-width);
+    @include kit-media(lg) {
+      width: ($kit-media-lg - $kit-grid-12-gutter-width);
     }
   }
 
@@ -31,40 +31,40 @@
   .container-fluid {
     box-sizing: border-box;
 
-    @include dhs-clearfix;
+    @include kit-clearfix;
 
     margin-right: auto;
     margin-left: auto;
-    padding-left: floor(($dhs-grid-12-gutter-width / 2));
-    padding-right: ceil(($dhs-grid-12-gutter-width / 2));
+    padding-left: floor(($kit-grid-12-gutter-width / 2));
+    padding-right: ceil(($kit-grid-12-gutter-width / 2));
   }
 
   //create row and clear floats inside
   .row {
-    @include dhs-clearfix;
+    @include kit-clearfix;
 
-    margin-left: ceil(($dhs-grid-12-gutter-width / -2));
-    margin-right: floor(($dhs-grid-12-gutter-width / -2));
+    margin-left: ceil(($kit-grid-12-gutter-width / -2));
+    margin-right: floor(($kit-grid-12-gutter-width / -2));
   }
 
   //create all classes
-  @include dhs-grid-12-make-grid-columns;
+  @include kit-grid-12-make-grid-columns;
 
   //create xs classes
-  @include dhs-grid-12-make-grid(xs);
+  @include kit-grid-12-make-grid(xs);
 
   //create sm classes
-  @include dhs-media(sm) {
-    @include dhs-grid-12-make-grid(sm);
+  @include kit-media(sm) {
+    @include kit-grid-12-make-grid(sm);
   }
 
   //create md classes
-  @include dhs-media(md) {
-    @include dhs-grid-12-make-grid(md);
+  @include kit-media(md) {
+    @include kit-grid-12-make-grid(md);
   }
 
   //create lg classes
-  @include dhs-media(lg) {
-    @include dhs-grid-12-make-grid(lg);
+  @include kit-media(lg) {
+    @include kit-grid-12-make-grid(lg);
   }
 }

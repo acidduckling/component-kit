@@ -8,12 +8,12 @@
 
 
 @media print {
-	.dhs-accordion {
+	.kit-accordion {
 		border-color: #000 !important;
 		color: #000 !important;
 	}
 
-	.dhs-accordion__title {
+	.kit-accordion__title {
 		background: #fff !important;
 		color: #000 !important;
 		border: 1px !important;
@@ -23,11 +23,11 @@
 		}
 	}
 
-	.dhs-accordion__body-wrapper {
+	.kit-accordion__body-wrapper {
 		border-color: #000 !important;
 	}
 
-	.dhs-accordion__body {
+	.kit-accordion__body {
 		height: auto !important;
 		display: block !important;
 	}

@@ -3,42 +3,42 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 /**
- * dhs-pixelfallback enable pixel fallbacks
+ * kit-pixelfallback enable pixel fallbacks
  */
-$dhs-pixelfallback: true !default;
+$kit-pixelfallback: true !default;
 
 /**
-  * dhs-media Breakpoints
+  * kit-media Breakpoints
   */
-$dhs-media-xs: 576px !default; // media query breakpoints
-$dhs-media-sm: 768px !default;
-$dhs-media-md: 992px !default;
-$dhs-media-lg: 1200px !default;
+$kit-media-xs: 576px !default; // media query breakpoints
+$kit-media-sm: 768px !default;
+$kit-media-md: 992px !default;
+$kit-media-lg: 1200px !default;
 
 /**
-  * dhs-rem value used for REM calculation
+  * kit-rem value used for REM calculation
   */
-$dhs-rem: 16 !default;
+$kit-rem: 16 !default;
 
 /**
-  * dhs-unit used for all type and grid calculations
+  * kit-unit used for all type and grid calculations
   */
-$dhs-unit: 4 !default;
+$kit-unit: 4 !default;
 
 /**
-  * dhs-font stack
-  * dhs-font-monospace stack
+  * kit-font stack
+  * kit-font-monospace stack
   */
-$dhs-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+$kit-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
   'Helvetica Neue', sans-serif !default;
-$dhs-font-monospace: 'Lucida Sans Typewriter', 'Lucida Console', Monaco, 'Bitstream Vera Sans Mono', monospace !default;
+$kit-font-monospace: 'Lucida Sans Typewriter', 'Lucida Console', Monaco, 'Bitstream Vera Sans Mono', monospace !default;
 
 /**
-  * dhs-fontsize-map
+  * kit-fontsize-map
   *
-  * Predetermined pixel sizes from a 1.25 typescale rounded to the nearest $dhs-unit (vertical grid)
+  * Predetermined pixel sizes from a 1.25 typescale rounded to the nearest $kit-unit (vertical grid)
   */
-$dhs-fontsize-map: (
+$kit-fontsize-map: (
   xs: 14,
   sm: 16,
   md: 20,
@@ -49,17 +49,17 @@ $dhs-fontsize-map: (
 ) !default;
 
 /**
-  * dhs-lineheight-map
+  * kit-lineheight-map
   *
   * Predetermined lineheight mapped to keyword
   */
-$dhs-lineheight-map: (
+$kit-lineheight-map: (
   nospace: 1,
   heading: 1.25,
   default: 1.5,
 ) !default;
 
 /**
-  * dhs-maxwidth for line lengths (the ‘measure’)
+  * kit-maxwidth for line lengths (the ‘measure’)
   */
-$dhs-maxwidth: 42em !default; // Answer to life, the universe, and everything (keeps things readable on wide viewports).
+$kit-maxwidth: 42em !default; // Answer to life, the universe, and everything (keeps things readable on wide viewports).

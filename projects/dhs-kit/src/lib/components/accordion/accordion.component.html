@@ -1,11 +1,11 @@
-<section class="dhs-accordion" [class]="getClasses()">
-  <a href="#accordion-default" class="dhs-accordion__title {{expandedClass}}"
+<section class="kit-accordion" [class]="getClasses()">
+  <a href="#accordion-default" class="kit-accordion__title {{expandedClass}}"
     aria-controls="accordion-default" [attr.aria-expanded]="expanded" [attr.aria-selected]="expanded" role="tab" (click)="toggle()">
     {{title}}
   </a>
 
-  <div class="dhs-accordion__body {{expandedClass}}" [id]="_controlId">
-    <div class="dhs-accordion__body-wrapper">
+  <div class="kit-accordion__body {{expandedClass}}" [id]="_controlId">
+    <div class="kit-accordion__body-wrapper">
       <ng-content></ng-content>
     </div>
   </div>

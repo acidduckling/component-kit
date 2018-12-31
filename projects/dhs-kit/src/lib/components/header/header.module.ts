@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DhsHeaderComponent } from './header.component';
-import { DhsHeaderBrandComponent } from './header-brand/header-brand.component';
+import { KitHeaderComponent } from './header.component';
+import { KitHeaderBrandComponent } from './header-brand/header-brand.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [DhsHeaderComponent, DhsHeaderBrandComponent],
-  exports: [DhsHeaderComponent, DhsHeaderBrandComponent]
+  declarations: [KitHeaderComponent, KitHeaderBrandComponent],
+  exports: [KitHeaderComponent, KitHeaderBrandComponent]
 })
-export class DhsHeaderModule { }
+export class KitHeaderModule { }

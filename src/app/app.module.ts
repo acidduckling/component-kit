@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { DhsKitModule, DhsAccordionModule, DhsHeaderModule } from 'dhs-kit';
+import { KitKitModule, KitAccordionModule, KitHeaderModule } from 'kit-kit';
 import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, DhsKitModule.init({ theme: 'light' }), DhsAccordionModule, DhsHeaderModule],
+  imports: [BrowserModule, KitKitModule.init({ theme: 'light' }), KitAccordionModule, KitHeaderModule],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -6,8 +6,8 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // GLOBAL VARIABLES
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-$dhs-grid-12-columns: 12 !default;        //column amounts
-$dhs-grid-12-gutter-width: 24px !default; //gutter space
+$kit-grid-12-columns: 12 !default;        //column amounts
+$kit-grid-12-gutter-width: 24px !default; //gutter space
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -17,8 +17,8 @@ $dhs-grid-12-gutter-width: 24px !default; //gutter space
  * Iterates through all 12 columns (≥2) to calculate the correct amount of left
  * and right padding for each of the classes.
  */
-@mixin dhs-grid-12-make-grid-columns( $i: 1, $list: ".col-xs-#{ $i }, .col-sm-#{ $i }, .col-md-#{ $i }, .col-lg-#{ $i }" ) {
-	@for $i from ( 1 + 1 ) through $dhs-grid-12-columns {
+@mixin kit-grid-12-make-grid-columns( $i: 1, $list: ".col-xs-#{ $i }, .col-sm-#{ $i }, .col-md-#{ $i }, .col-lg-#{ $i }" ) {
+	@for $i from ( 1 + 1 ) through $kit-grid-12-columns {
 		$list: "#{ $list }, .col-xs-#{ $i }, .col-sm-#{ $i }, .col-md-#{ $i }, .col-lg-#{ $i }";
 	}
 
@@ -26,8 +26,8 @@ $dhs-grid-12-gutter-width: 24px !default; //gutter space
 		box-sizing: border-box; //we can’t assume that has been added on * {}
 		position: relative;
 		min-height: 1px;
-		padding-left:  ceil( ( $dhs-grid-12-gutter-width / 2 ) );
-		padding-right: floor( ( $dhs-grid-12-gutter-width / 2 ) );
+		padding-left:  ceil( ( $kit-grid-12-gutter-width / 2 ) );
+		padding-right: floor( ( $kit-grid-12-gutter-width / 2 ) );
 	}
 }
 
@@ -35,8 +35,8 @@ $dhs-grid-12-gutter-width: 24px !default; //gutter space
 /**
  * Iterates through the columns to create a new list and then sets the float.
  */
-@mixin dhs-grid-12-float-grid-columns( $class, $i: 1, $list: ".col-#{ $class }-#{ $i }" ) {
-	@for $i from ( 1 + 1 ) through $dhs-grid-12-columns {
+@mixin kit-grid-12-float-grid-columns( $class, $i: 1, $list: ".col-#{ $class }-#{ $i }" ) {
+	@for $i from ( 1 + 1 ) through $kit-grid-12-columns {
 		$list: "#{ $list }, .col-#{ $class }-#{ $i }";
 	}
 
@@ -50,16 +50,16 @@ $dhs-grid-12-gutter-width: 24px !default; //gutter space
  * Calculates the correct widths as a percentage based on the column count,
  * column breakpoint class, and type (pull or offset).
  */
-@mixin dhs-grid-12-calc-grid-column( $index, $class, $type ) {
+@mixin kit-grid-12-calc-grid-column( $index, $class, $type ) {
 	@if ( $type == width ) and ( $index > 0 ) {
 		.col-#{ $class }-#{ $index } {
-			width: percentage( ( $index / $dhs-grid-12-columns ) );
+			width: percentage( ( $index / $kit-grid-12-columns ) );
 		}
 	}
 
 	@if ( $type == push ) and ( $index > 0 ) {
 		.col-#{ $class }-push-#{ $index } {
-			left: percentage( ( $index / $dhs-grid-12-columns ) );
+			left: percentage( ( $index / $kit-grid-12-columns ) );
 		}
 	}
 
@@ -71,7 +71,7 @@ $dhs-grid-12-gutter-width: 24px !default; //gutter space
 
 	@if ($type == pull) and ( $index > 0 ) {
 		.col-#{ $class }-pull-#{ $index } {
-			right: percentage( ( $index / $dhs-grid-12-columns ) );
+			right: percentage( ( $index / $kit-grid-12-columns ) );
 		}
 	}
 
@@ -83,7 +83,7 @@ $dhs-grid-12-gutter-width: 24px !default; //gutter space
 
 	@if ($type == offset) {
 		.col-#{ $class }-offset-#{ $index } {
-			margin-left: percentage( ( $index / $dhs-grid-12-columns ) );
+			margin-left: percentage( ( $index / $kit-grid-12-columns ) );
 		}
 	}
 }
@@ -92,9 +92,9 @@ $dhs-grid-12-gutter-width: 24px !default; //gutter space
 /**
  * Calls the above mixins and combines them.
  */
-@mixin dhs-grid-12-loop-grid-columns( $columns, $class, $type ) {
+@mixin kit-grid-12-loop-grid-columns( $columns, $class, $type ) {
 	@for $i from 0 through $columns {
-		@include dhs-grid-12-calc-grid-column( $i, $class, $type );
+		@include kit-grid-12-calc-grid-column( $i, $class, $type );
 	}
 }
 
@@ -102,10 +102,10 @@ $dhs-grid-12-gutter-width: 24px !default; //gutter space
 /**
  * Finally, we create the grid and all the necessary classes.
  */
-@mixin dhs-grid-12-make-grid( $class ) {
-	@include dhs-grid-12-float-grid-columns( $class );
-	@include dhs-grid-12-loop-grid-columns( $dhs-grid-12-columns, $class, width );
-	@include dhs-grid-12-loop-grid-columns( $dhs-grid-12-columns, $class, pull );
-	@include dhs-grid-12-loop-grid-columns( $dhs-grid-12-columns, $class, push );
-	@include dhs-grid-12-loop-grid-columns( $dhs-grid-12-columns, $class, offset );
+@mixin kit-grid-12-make-grid( $class ) {
+	@include kit-grid-12-float-grid-columns( $class );
+	@include kit-grid-12-loop-grid-columns( $kit-grid-12-columns, $class, width );
+	@include kit-grid-12-loop-grid-columns( $kit-grid-12-columns, $class, pull );
+	@include kit-grid-12-loop-grid-columns( $kit-grid-12-columns, $class, push );
+	@include kit-grid-12-loop-grid-columns( $kit-grid-12-columns, $class, offset );
 }

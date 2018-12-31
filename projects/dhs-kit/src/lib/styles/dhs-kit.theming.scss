@@ -1,60 +1,60 @@
 /**
   * Colors light theme
   */
-  $dhs-color-foreground-text:   #313131 !default;
-  $dhs-color-foreground-action: #00698f !default;
-  $dhs-color-foreground-focus:  #9263DE !default;
-  $dhs-color-background:        #ffffff !default;
+  $kit-color-foreground-text:   #313131 !default;
+  $kit-color-foreground-action: #00698f !default;
+  $kit-color-foreground-focus:  #9263DE !default;
+  $kit-color-background:        #ffffff !default;
   
   // Suggestion colors for Non-user definable color palette
-  $dhs-color-background-shade-suggestion:     darken( $dhs-color-background, 4% ) !default;
-  $dhs-color-background-alt-suggestion:       darken( $dhs-color-background, 8% ) !default;
-  $dhs-color-background-alt-shade-suggestion: darken( $dhs-color-background, 12% ) !default;
-  $dhs-color-foreground-muted-suggestion:     mix( $dhs-color-foreground-text, darken( $dhs-color-background, 12% ), 72% ) !default;
-  $dhs-color-foreground-border-suggestion:    mix( $dhs-color-foreground-text, darken( $dhs-color-background, 12% ), 55% ) !default;
+  $kit-color-background-shade-suggestion:     darken( $kit-color-background, 4% ) !default;
+  $kit-color-background-alt-suggestion:       darken( $kit-color-background, 8% ) !default;
+  $kit-color-background-alt-shade-suggestion: darken( $kit-color-background, 12% ) !default;
+  $kit-color-foreground-muted-suggestion:     mix( $kit-color-foreground-text, darken( $kit-color-background, 12% ), 72% ) !default;
+  $kit-color-foreground-border-suggestion:    mix( $kit-color-foreground-text, darken( $kit-color-background, 12% ), 55% ) !default;
   
   // Non-user definable color palette
-  $dhs-color-background-shade:     dhs-color-a11y( $dhs-color-background-shade-suggestion, $dhs-color-foreground-text ) !global;
-  $dhs-color-background-alt:       dhs-color-a11y( $dhs-color-background-alt-suggestion, $dhs-color-foreground-text ) !global;
-  $dhs-color-background-alt-shade: dhs-color-a11y( $dhs-color-background-alt-shade-suggestion, $dhs-color-foreground-text ) !global;
-  $dhs-color-foreground-muted:     dhs-color-a11y( $dhs-color-foreground-muted-suggestion, $dhs-color-background-alt-shade ) !global;
-  $dhs-color-foreground-border:    dhs-color-a11y( $dhs-color-foreground-border-suggestion, $dhs-color-background-alt-shade, 'large') !global;
+  $kit-color-background-shade:     kit-color-a11y( $kit-color-background-shade-suggestion, $kit-color-foreground-text ) !global;
+  $kit-color-background-alt:       kit-color-a11y( $kit-color-background-alt-suggestion, $kit-color-foreground-text ) !global;
+  $kit-color-background-alt-shade: kit-color-a11y( $kit-color-background-alt-shade-suggestion, $kit-color-foreground-text ) !global;
+  $kit-color-foreground-muted:     kit-color-a11y( $kit-color-foreground-muted-suggestion, $kit-color-background-alt-shade ) !global;
+  $kit-color-foreground-border:    kit-color-a11y( $kit-color-foreground-border-suggestion, $kit-color-background-alt-shade, 'large') !global;
   
   
   /**
    * Colors dark theme
    */
-  $dhs-colordark-foreground-text:   #ffffff !default;
-  $dhs-colordark-foreground-action: #61daff !default;
-  $dhs-colordark-foreground-focus:  #C390F9 !default;
-  $dhs-colordark-background:        #135E70 !default;
+  $kit-colordark-foreground-text:   #ffffff !default;
+  $kit-colordark-foreground-action: #61daff !default;
+  $kit-colordark-foreground-focus:  #C390F9 !default;
+  $kit-colordark-background:        #135E70 !default;
   
   // Suggestion colors for Non-user definable color palette
-  $dhs-colordark-background-shade-suggestion:     darken( $dhs-colordark-background, 4% ) !default;
-  $dhs-colordark-background-alt-suggestion:       darken( $dhs-colordark-background, 8% ) !default;
-  $dhs-colordark-background-alt-shade-suggestion: darken( $dhs-colordark-background, 12% ) !default;
-  $dhs-colordark-foreground-muted-suggestion:     mix( $dhs-colordark-foreground-text, $dhs-colordark-background, 72% ) !default;
-  $dhs-colordark-foreground-border-suggestion:    mix( $dhs-colordark-foreground-text, $dhs-colordark-background, 55% ) !default;
+  $kit-colordark-background-shade-suggestion:     darken( $kit-colordark-background, 4% ) !default;
+  $kit-colordark-background-alt-suggestion:       darken( $kit-colordark-background, 8% ) !default;
+  $kit-colordark-background-alt-shade-suggestion: darken( $kit-colordark-background, 12% ) !default;
+  $kit-colordark-foreground-muted-suggestion:     mix( $kit-colordark-foreground-text, $kit-colordark-background, 72% ) !default;
+  $kit-colordark-foreground-border-suggestion:    mix( $kit-colordark-foreground-text, $kit-colordark-background, 55% ) !default;
   
   // Non-user definable color palette
-  $dhs-colordark-background-shade:     dhs-color-a11y( $dhs-colordark-background-shade-suggestion, $dhs-colordark-foreground-text ) !global;
-  $dhs-colordark-background-alt:       dhs-color-a11y( $dhs-colordark-background-alt-suggestion, $dhs-colordark-foreground-text ) !global;
-  $dhs-colordark-background-alt-shade: dhs-color-a11y( $dhs-colordark-background-alt-shade-suggestion, $dhs-colordark-foreground-text ) !global;
-  $dhs-colordark-foreground-muted:     dhs-color-a11y( $dhs-colordark-foreground-muted-suggestion, $dhs-colordark-background ) !global;
-  $dhs-colordark-foreground-border:    dhs-color-a11y( $dhs-colordark-foreground-border-suggestion, $dhs-colordark-background, 'large') !global;
+  $kit-colordark-background-shade:     kit-color-a11y( $kit-colordark-background-shade-suggestion, $kit-colordark-foreground-text ) !global;
+  $kit-colordark-background-alt:       kit-color-a11y( $kit-colordark-background-alt-suggestion, $kit-colordark-foreground-text ) !global;
+  $kit-colordark-background-alt-shade: kit-color-a11y( $kit-colordark-background-alt-shade-suggestion, $kit-colordark-foreground-text ) !global;
+  $kit-colordark-foreground-muted:     kit-color-a11y( $kit-colordark-foreground-muted-suggestion, $kit-colordark-background ) !global;
+  $kit-colordark-foreground-border:    kit-color-a11y( $kit-colordark-foreground-border-suggestion, $kit-colordark-background, 'large') !global;
   
   
   /**
    * Colors system messages
    */
-  $dhs-color-error:   #ff635c !default;
-  $dhs-color-success: #0cac78 !default;
-  $dhs-color-warning: #f69900 !default;
-  $dhs-color-info:    #00bfe9 !default;
+  $kit-color-error:   #ff635c !default;
+  $kit-color-success: #0cac78 !default;
+  $kit-color-warning: #f69900 !default;
+  $kit-color-info:    #00bfe9 !default;
   
   
   /**
-   * dhs-border-radius styles
+   * kit-border-radius styles
    */
-  $dhs-border-radius: $dhs-unit + 0px !default;
+  $kit-border-radius: $kit-unit + 0px !default;
   

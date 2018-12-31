@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DhsAccordionComponent } from './accordion.component';
+import { KitAccordionComponent } from './accordion.component';
 
 @NgModule({
   imports: [CommonModule],
-  declarations: [DhsAccordionComponent],
-  exports: [DhsAccordionComponent]
+  declarations: [KitAccordionComponent],
+  exports: [KitAccordionComponent]
 })
-export class DhsAccordionModule {}
+export class KitAccordionModule {}

@@ -1,3 +1,3 @@
-export class DhsComponentBase {
+export class KitComponentBase {
   
 }

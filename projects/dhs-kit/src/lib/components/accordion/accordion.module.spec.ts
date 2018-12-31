@@ -1,13 +1,13 @@
-import { DhsAccordionModule } from './accordion.module';
+import { KitAccordionModule } from './accordion.module';
 
-describe('DhsAccordionModule', () => {
-  let dhsAccordionModule: DhsAccordionModule;
+describe('KitAccordionModule', () => {
+  let kitAccordionModule: KitAccordionModule;
 
   beforeEach(() => {
-    dhsAccordionModule = new DhsAccordionModule();
+    kitAccordionModule = new KitAccordionModule();
   });
 
   it('should create an instance', () => {
-    expect(dhsAccordionModule).toBeTruthy();
+    expect(kitAccordionModule).toBeTruthy();
   });
 });
